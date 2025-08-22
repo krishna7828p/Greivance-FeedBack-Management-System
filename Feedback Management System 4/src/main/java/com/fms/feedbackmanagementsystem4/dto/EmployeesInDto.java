@@ -1,0 +1,250 @@
+package com.fms.feedbackmanagementsystem4.dto;
+
+
+import com.fms.feedbackmanagementsystem4.entities.Department;
+import com.fms.feedbackmanagementsystem4.entities.Role;
+
+import java.util.Objects;
+
+
+/**
+ * Employee DTO .
+ */
+public class EmployeesInDto {
+  /**
+   * maximum size of password.
+   */
+  private final int maxPassword = 15;
+
+  /**
+   * minimum size of password.
+   */
+  private final int minPassword = 5;
+
+  /**
+   * Employee Name.
+   */
+//  @NotEmpty(message = "Username can not be null")
+  private String userName;
+
+  /**
+   * Email of employee.
+   */
+
+  private String email;
+
+  /**
+   * Password of account .
+   */
+//  @NotEmpty(message = "Password field is mandatory")
+//  @Size(
+//      min = minPassword,
+//      max = maxPassword,
+//      message = "password should be in range between 5 to 18"
+//  )
+  private String password;
+
+  /**
+   * Role of employee .
+   */
+  private Role role;
+
+  /**
+   * Department of employee .
+   */
+//  @NotNull(message = "Department can not be null")
+  private Department department;
+
+  /**
+   * Getter of user name .
+   *
+   * @return user name .
+   */
+  public String getUserName() {
+    return userName;
+  }
+
+  /**
+   * Setter of User Name .
+   *
+   * @param newUserName of string type .
+   */
+  public void setUserName(final String newUserName) {
+    this.userName = newUserName;
+  }
+
+  /**
+   * Getter of email .
+   *
+   * @return email
+   */
+  public String getEmail() {
+    return email;
+  }
+
+  /**
+   * Setter of email .
+   *
+   * @param newEmail of string type.
+   */
+  public void setEmail(final String newEmail) {
+    this.email = newEmail;
+  }
+
+  /**
+   * Getter of password .
+   *
+   * @return password.
+   */
+  public String getPassword() {
+    return password;
+  }
+
+  /**
+   * Setter of password .
+   *
+   * @param newPassword of String type.
+   */
+  public void setPassword(final String newPassword) {
+    this.password = newPassword;
+  }
+
+  /**
+   *Getter of Role.
+   *
+   * @return Role of string type .
+   */
+  public Role getRole() {
+    return role;
+  }
+
+  /**
+   * Setter for Role .
+   *
+   * @param newRole of string type .
+   */
+  public void setRole(final Role newRole) {
+    this.role = newRole;
+  }
+
+  /**
+   * Getter for Department .
+   *
+   * @return department of String type .
+   */
+  public Department getDepartment() {
+    return department;
+  }
+
+  /**
+   * setter for department .
+   *
+   * @param newDepartment of string type .
+   */
+  public void setDepartment(final Department newDepartment) {
+    this.department = newDepartment;
+  }
+
+  /**
+   * To string method.
+   */
+  @Override
+  public String toString() {
+    return (
+      "EmployeesDto [maxPassword="
+      +
+      maxPassword
+      +
+      ", minPassword="
+      +
+      minPassword
+      +
+      ", userName="
+      +
+      userName
+      +
+      ", email="
+      +
+      email
+      +
+      ", password="
+      +
+      password
+      +
+      ", role="
+      +
+      role
+      +
+      ", department="
+      +
+      department
+      +
+      "]"
+      );
+  }
+
+  /**
+   * Employee dto all Args constructor.
+   *
+   * @param newUserName of type String
+   * @param newEmail of string type
+   * @param newPassword of string type
+   * @param newRole of Role type
+   * @param newDepartment of Department type
+   */
+  public EmployeesInDto( String newUserName,
+      final  String newEmail,
+      final   String newPassword,
+      final Role newRole,
+      final
+      Department newDepartment
+  ) {
+    super();
+    this.userName = newUserName;
+    this.email = newEmail;
+    this.password = newPassword;
+    this.role = newRole;
+    this.department = newDepartment;
+  }
+
+  /**
+   * No Args Constructor .
+   */
+  public EmployeesInDto() {
+    super();
+  }
+
+  /**
+   * HashCode Method.
+   */
+  @Override
+  public int hashCode() {
+    return Objects.hash(
+        department, email, maxPassword, minPassword, password, role, userName);
+  }
+
+  /**
+   * Equals Method.
+   */
+  @Override
+  public boolean equals(final Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    EmployeesInDto other = (EmployeesInDto) obj;
+    return Objects.equals(department, other.department)
+        && Objects.equals(email, other.email)
+        && maxPassword == other.maxPassword
+        && minPassword == other.minPassword
+        && Objects.equals(password, other.password)
+        && role == other.role
+        && Objects.equals(userName, other.userName);
+  }
+}
+
